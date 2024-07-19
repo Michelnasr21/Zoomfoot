@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees Salary</title>
+    <meta charset="UTF-8">
+    <meta name="keywoard" content="our menu , our gallary">
+    <meta name="author" content="Michel Nasr">
+    <meta name="description" content="Employees Salary">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        :root{
+           --bas0:#fac031;
+        }
+        .error{
+          color: red;
+          margin-top:-13px;
+          margin-bottom: 3px;
+        }
+        body{
+            background-color: #141e30;
+        }
+        nav{
+            z-index: 99;
+        }
+        .navbar-brand{
+             color:var(--bas0);
+
+        }
+        .navbar-brand:hover{
+           color:var(--bas0);
+        }
+        .nav-link{
+            color: #fff;
+        }
+        .nav-link:hover{
+            color: #fff;
+            text-decoration: underline;
+        }
+        .ico a{
+            color: #fff;
+        }
+        .ico a:hover{
+            color: var(--bas0);
+        }
+        .sea{
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+        .sea::placeholder{
+            color: #fff;
+        }
+        .sea:focus{
+            background-color: transparent;
+            border-radius: 20px;
+            border:1px solid #fff;
+        }
+        .navbar-toggler{
+            color: var(--bas0);
+            background-color: #fff;
+        }
+        .login{
+            position: absolute;
+            top:50%;
+            left:50%;
+            padding:40px;
+            width:400px;
+            background: rgba(0,0,0,.5);
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(0,0,0,.6);
+             transform:translate(-50%,-50%)
+        }
+        .header{
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            color:#fff;
+        }
+        .e .input  , .n .input{
+            width: 100%;
+            position: relative;
+            padding:8px 0;
+            font-size:16px;
+            background-color: transparent ;
+            border:none;
+            outline:none;
+            border-bottom: 1px solid #fff;
+            margin-bottom:30px;
+            color:#fff;
+        }
+        select{
+            width: 100%;
+            position: relative;
+            padding:3px 0;
+            background-color: transparent ;
+            color:#fff;
+            margin-bottom:20px;
+            border: 1px solid #fff;
+        }
+        option{
+          background-color: transparent ;
+          color:black;
+
+        }
+        ::placeholder{
+            font-size: 16px;
+            color:#eadcdc;
+        }
+        ::placeholder:focus{
+            color:#fff;
+
+        }
+        #submit {
+		position: relative;
+    display: inline-block;
+		padding: 10px 10px;
+		color: #03e9f4;
+		font-size: 16px;
+		text-decoration: none;
+		text-transform: uppercase;
+		overflow: hidden;
+		transition: 0.5s;
+		margin-top: 10px;
+		letter-spacing: 4px;
+    background: transparent;
+    border: none;
+	   }
+       #submit:hover {
+		background-color: #03e9f4;
+		color: #000;
+		border-radius: 5px;
+		box-shadow: 0 0 5px #03e9f4,0 0 25px #03e9f4,0 0 50px #03e9f4,0 0 100px #03e9f4;
+	    }
+        #submit span {
+		position: absolute;
+		display: block;
+	   }
+        #submit span:nth-child(1) {
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 2px;
+		background: linear-gradient(90deg, transparent, #03e9f4);
+		animation: btn-anim1 1s linear infinite;
+	   }
+        @keyframes btn-anim1 {
+		  0% {
+		  left: -100%;
+		  }
+		  50%,100% {
+		   left: 100%;
+		  }
+	    }
+       #submit span:nth-child(2) {
+		top: -100%;
+		right: 0;
+		width: 2px;
+		height: 100%;
+		background: linear-gradient(180deg, transparent, #03e9f4);
+		animation: btn-anim2 1s linear infinite;
+		animation-delay: 0.25s;
+	   }
+         @keyframes btn-anim2 {
+		   0% {
+		  top: -100%;
+		 }
+		  50%,100% {
+		  top: 100%;
+		 }
+	   }
+     #submit span:nth-child(3) {
+		bottom: 0;
+		right: -100%;
+		width: 100%;
+		height: 2px;
+		background: linear-gradient(270deg, transparent, #03e9f4);
+		animation: btn-anim3 1s linear infinite;
+		animation-delay: 0.5s;
+	  }
+	  
+	  @keyframes btn-anim3 {
+		0% {
+		  right: -100%;
+		}
+		50%,100% {
+		  right: 100%;
+		}
+	  }
+      #submit span:nth-child(4) {
+		bottom: -100%;
+		left: 0;
+		width: 2px;
+		height: 100%;
+		background: linear-gradient(360deg, transparent, #03e9f4);
+		animation: btn-anim4 1s linear infinite;
+		animation-delay: 0.75s;
+	  }
+	  
+	  @keyframes btn-anim4 {
+		0% {
+		  bottom: -100%;
+		}
+		50%,100% {
+		  bottom: 100%;
+		}
+	  }
+      @media (max-width:992px){
+        .login{
+            position: relative;
+            top:50%;
+            left:50%;
+            padding:40px;
+            width:400px;
+            border-radius: 10px;
+             transform:translate(-50%,10%);
+        }
+    }
+    @media(min-width:400px) and (max-width:420px){
+        .login{
+            width: 300px;
+            position: relative;
+            top:50%;
+            left:50%;
+            padding:40px;
+            border-radius: 10px;
+            transform:translate(-50%,30%);
+        }
+    }
+    @media (max-width:399px){
+        .login{
+            width: 300px;
+            position: relative;
+            top:50%;
+            left:50%;
+            padding:40px;
+            border-radius: 10px;
+            transform:translate(-50%,15%);
+        }
+    }
+    @media (min-width:750px) and (max-width:930px){
+        .login{
+            width: 400px;
+            position: relative;
+            top:50%;
+            left:50%;
+            padding:40px;
+            border-radius: 10px;
+            transform:translate(-50%,15%);
+        }
+
+    }
+    </style>
+</head>
+<body>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-transparent">
+        <div class="container-fluid">
+          <a class="navbar-brand ps-3" href="#">Zoom foot</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-3">
+              <li class="nav-item ">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Contact Us</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-3 sea" type="search" placeholder="Search..." aria-label="Search">
+              <div class="ico pe-2">
+                <a href="login.html"><i class="fa-solid fa-user"></i></a>
+              </div>
+              <div class="ico pe-3">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- salary -->
+      <div class="login">
+         <div class="container">
+            <form method="post" action="#">
+                <div class="header">
+                    <h2>Salary</h2>
+                </div>
+                <div class="e">
+                    <input type="text" class="input" id="username" name="username" placeholder="Employee name" autofocus>
+                </div>
+                <div class="ususer"></div>
+                <div class="n">
+                    <input type="text" class="input" id="salary" name="employee salary" placeholder="Your Salary" >
+                </div>
+                <div class="ussalary"></div>
+                <div class="e">
+                    <input type="text" id="bonus" name="bonus" class="input" placeholder="Your bonus" >
+                </div>
+                <div class="usbonus"></div>
+                <select id="salarytax" name="salarytax" onchange="chkTax()">
+                   <option value="0.00">select Salary Tax</option>
+                   <option value="0.07">7%</option>
+                   <option value="0.10">10%</option>
+                   <option value="0.15">15%</option>
+                </select>
+                <div class="ustax"></div>
+                <div class="e">
+                    <input type="text" id="netsalary" name="netsalary"  class="input" placeholder="Net Salary">
+                </div>
+                <button type="submit" id="submit" >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    submit
+                </button>
+
+            </form>
+
+         </div>
+      </div>
+      <script src="js/jquery.js"></script>
+   <script src="js/all.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+      <script>
+         $(document).ready(function (){
+        $('form'). submit(function (ev){
+           $('#username').each(function (){
+              if($(this).val() == ''){
+                 $(this).css({'border-bottom':'1px solid red'});
+                 $('.ususer').addClass('error')
+                        .html('Username is required');
+                 ev.preventDefault();
+              }else{
+                $(this).css({'border-bottom':'1px solid #eee'});
+                $('.ususer').hide();
+              }
+           });
+           $('#salary').each(function (){
+              if($(this).val() == ''){
+                 $(this).css({'border-bottom':'1px solid red'});
+                 $('.ussalary').addClass('error')
+                        .html('Salary is required');
+                 ev.preventDefault();
+              }else{
+                $(this).css({'border-bottom':'1px solid #eee'});
+                $('.ussalary').hide();
+              }
+           });
+           $('#bonus').each(function (){
+              if($(this).val() == ''){
+                 $(this).css({'border-bottom':'1px solid red'});
+                 $('.usbonus').addClass('error')
+                        .html('bonus is required');
+                 ev.preventDefault();
+              }else{
+                $(this).css({'border-bottom':'1px solid #eee'});
+                $('.usbonus').hide();
+              }
+           });
+           $('#salarytax').each(function (){
+              if($(this).val() == '0.00'){
+                 $(this).css({'border':'1px solid red'});
+                 $('.ustax').addClass('error')
+                        .html('tax is required');
+                 ev.preventDefault();
+              }else{
+                $(this).css({'border':'1px solid #eee'});
+                $('.ustax').hide();   
+              }
+           });
+        });
+        $('form').submit(function(event){
+          var empName = $('#username').val();
+          var salaryNu = $('#salary').val();
+          var salaryBonus = $('#bonus').val();
+          var salaryTax = $('#salarytax').val();
+          var netSalary = (salaryNu - (salaryNu * salaryTax)) + parseInt(salaryBonus);
+          var TotalSalary = salaryNu - (salaryNu * salaryTax);
+
+          $('#netsalary').val(netSalary);
+          $('#submit').html(TotalSalary);
+          event.preventDefault();
+        })
+        
+      });
+      </script>
+    
+</body>
+</html>

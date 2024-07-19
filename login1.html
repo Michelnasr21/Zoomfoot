@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: #141e30;
+        }
+        .n{
+            width:400px;
+            height:300px;
+            margin:160px auto;
+            box-shadow: 0 15px 25px rgba(0,0,0,.6);
+            background: rgba(0,0,0,.5);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        h3{
+            color:white;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 0 30px;
+            padding: 0px;
+            font-size: 25px;
+        }
+        .v{
+            display: block;
+            margin-bottom: 30px;
+            border:none;
+            padding: 10px 0;
+            background-color: transparent;
+            outline: none;
+            color:white;
+            border-bottom: 1px solid #fff;
+            font-size:16px;
+            width:360px;
+            transform: translate(5%,30%);
+        }
+        input::placeholder{
+            color:#fff;
+        }
+        input:focus{
+            border-bottom: 1px solid #03e9f4;
+        }
+        input::placeholder:focus{
+            color:#03e9f4;
+        }
+        .m{
+            background-color: transparent;
+            color: #03e9f4;
+            border: 1px solid #03e9f4;
+            padding: 10px 20px;
+            transform: translate(20%,0%);
+            margin-top: 30px;
+            text-transform: capitalize;
+            font-size: 16px;
+            transition: .5s;
+            letter-spacing: 4px
+        }
+        .m:hover{
+            background: #03e9f4;
+		color: #000;
+		border-radius: 5px;
+		box-shadow: 0 0 5px #03e9f4,0 0 25px #03e9f4,0 0 50px #03e9f4,0 0 100px #03e9f4;
+        } 
+        .register{
+            margin:auto;
+            color:#fff;
+            font-size: 14px;
+            text-align: center;
+            width:60%;
+            display: block;
+            transform: translate(30%,-150%);
+        }
+        .register a{
+        margin:auto;
+        text-decoration: none;
+        color: #03e9f4;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="n">
+        <h3>Login page</h3>
+        <form action="" method="post">
+            <input type="text" name="user" placeholder="Username" class="v"  required>
+            <input type="password" name="pass" placeholder="password" class="v" required>
+            <input type="submit" value="Login" class="m">
+            <div class="register">
+                Don't have any account ?
+                    <a href="#">Register</a>
+                </div>
+        </form>
+
+
+    </div>
+    
+</body>
+</html>

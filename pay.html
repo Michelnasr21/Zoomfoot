@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pay method</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        :root{
+           --bas0:#fac031;
+        }
+        body{
+            background: #0f0c29;
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            height: 100vh;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+        }
+        nav{
+            z-index: 99;
+        }
+        .navbar-brand{
+             color:var(--bas0);
+
+        }
+        .navbar-brand:hover{
+           color:var(--bas0);
+        }
+        .nav-link{
+            color: #fff;
+        }
+        .nav-link:hover{
+            color: #fff;
+        }
+        .ico a{
+            color: #fff;
+        }
+        .ico a:hover{
+            color: var(--bas0);
+        }
+        .sea{
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+        .sea::placeholder{
+            color: #fff;
+        }
+        .sea:focus{
+            background-color: transparent;
+            border-radius: 20px;
+            border:1px solid #fff;
+        }
+        .navbar-toggler{
+            color: var(--bas0);
+            background-color: #fff;
+        }
+        .form {
+  display: flex;
+  /* under no in fornt of */
+  flex-direction: column; 
+  gap: 20px;
+  padding: 20px;
+  margin-top:70px;
+}
+.paymentother {
+  display: grid;
+  grid-template-columns: 50%;
+  gap: 20px;
+  padding: 10px;
+  justify-content: center;
+}
+.paymentother button {
+  height: 55px;
+  background: #F2F2F2;
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+.paymentother button svg {
+  height: 18px;
+}
+.paymentother button:last-child svg {
+  height: 22px;
+}
+.card-info{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.input_container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.split {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 15px;
+}
+.split input {
+  width: 100%;
+}
+.input_label {
+  font-size: 12px;
+  color: #8B8E98;
+  font-weight: 600;
+}
+.input_field {
+  width: auto;
+  height: 40px;
+  padding: 0 0 0 16px;
+  border-radius: 9px;
+  outline: none;
+  background-color: #F2F2F2;
+  border: 1px solid #e5e5e500;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+.checkout {
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  border: none;
+  background: #302b63;
+  color: ghostwhite;
+  overflow: hidden;
+}
+.checkout span {
+  position: relative;
+  transition: color 0.6s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+.checkout::before,
+.checkout::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.checkout::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transition: transform 0.5s cubic-bezier(0.3, 1, 0.8, 1);
+}
+.checkout:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+.checkout:active {
+  transform: scale(0.95);
+}
+.mo{
+    background: #FFFFFF;
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  max-width: 450px;
+
+}
+.my{
+  width: 250px;
+  height: 40px;
+  padding: 0 0 0 16px;
+  border-radius: 9px;
+  outline: none;
+  background-color: #F2F2F2;
+  border: 1px solid #e5e5e500;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+
+}
+.my-input{
+  width: 110px;
+  height: 40px;
+  padding: 0 0 0 16px;
+  border-radius: 9px;
+  outline: none;
+  background-color: #F2F2F2;
+  border: 1px solid #e5e5e500;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+
+}
+table{
+    border-radius: 5px;
+    font-size: 12px;
+    border:none;
+    background: #FFFFFF;
+    width: 100%;
+    border:1px solid #e5e5e500;
+    margin-top:70px;
+}
+td,th{
+    text-align: center;
+    padding: 8px;
+
+}
+#submit-area{
+  position: absolute;
+  transform: translate(400%,100%);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  border: none;
+  background: #302b63;
+  color: white;
+  overflow: hidden;
+
+}
+
+
+       
+    </style>
+</head>
+<body>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-transparent">
+        <div class="container-fluid">
+          <a class="navbar-brand ps-3" href="#">Zoom foot</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-3">
+              <li class="nav-item ">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Contact Us</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-3 sea" type="search" placeholder="Search..." aria-label="Search">
+              <div class="ico pe-2">
+                <a href="login.html"><i class="fa-solid fa-user"></i></a>
+              </div>
+              <div class="ico pe-3">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="pay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="mo">
+                        <form class="form">
+                            <div class="paymentother">
+                                <button name="apple-pay" type="button">
+                                    <svg xml:space="preserve" viewBox="0 0 512 210.2" y="0px" x="0px" id="Layer_1" version="1.1"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M93.6,27.1C87.6,34.2,78,39.8,68.4,39c-1.2-9.6,3.5-19.8,9-26.1c6-7.3,16.5-12.5,25-12.9  C103.4,10,99.5,19.8,93.6,27.1 M102.3,40.9c-13.9-0.8-25.8,7.9-32.4,7.9c-6.7,0-16.8-7.5-27.8-7.3c-14.3,0.2-27.6,8.3-34.9,21.2  c-15,25.8-3.9,64,10.6,85c7.1,10.4,15.6,21.8,26.8,21.4c10.6-0.4,14.8-6.9,27.6-6.9c12.9,0,16.6,6.9,27.8,6.7  c11.6-0.2,18.9-10.4,26-20.8c8.1-11.8,11.4-23.3,11.6-23.9c-0.2-0.2-22.4-8.7-22.6-34.3c-0.2-21.4,17.5-31.6,18.3-32.2  C123.3,42.9,107.7,41.3,102.3,40.9 M182.6,11.9v155.9h24.2v-53.3h33.5c30.6,0,52.1-21,52.1-51.4c0-30.4-21.1-51.2-51.3-51.2H182.6z   M206.8,32.3h27.9c21,0,33,11.2,33,30.9c0,19.7-12,31-33.1,31h-27.8V32.3z M336.6,169c15.2,0,29.3-7.7,35.7-19.9h0.5v18.7h22.4V90.2  c0-22.5-18-37-45.7-37c-25.7,0-44.7,14.7-45.4,34.9h21.8c1.8-9.6,10.7-15.9,22.9-15.9c14.8,0,23.1,6.9,23.1,19.6v8.6l-30.2,1.8  c-28.1,1.7-43.3,13.2-43.3,33.2C298.4,155.6,314.1,169,336.6,169z M343.1,150.5c-12.9,0-21.1-6.2-21.1-15.7c0-9.8,7.9-15.5,23-16.4  l26.9-1.7v8.8C371.9,140.1,359.5,150.5,343.1,150.5z M425.1,210.2c23.6,0,34.7-9,44.4-36.3L512,54.7h-24.6l-28.5,92.1h-0.5  l-28.5-92.1h-25.3l41,113.5l-2.2,6.9c-3.7,11.7-9.7,16.2-20.4,16.2c-1.9,0-5.6-0.2-7.1-0.4v18.7C417.3,210,423.3,210.2,425.1,210.2z"
+                                            id="XMLID_34_"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-info">
+                                <div class="input_container">
+                                    <label class="input_label">Card holder name</label>
+                                    <input class="input_field"  type="text" placeholder="Enter your full name">
+                                </div>
+                                <div class="input_container">
+                                    <label class="input_label">Card Number</label>
+                                    <input class="input_field"  type="number" placeholder="0000 0000 0000 0000">
+                                </div>
+                                <div class="input_container">
+                                    <label class="input_label">Expiry Date / CVV</label>
+                                    <div class="split">
+                                        <input class="input_field my"  type="text" placeholder="01/23">
+                                        <input class="input_field my-input"   type="number" placeholder="CVV">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="checkout" style="cursor: pointer;">
+                                <span>Checkout</span>
+                            </button>
+                        </form>
+                    </div>
+                
+    
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <table id="my-table">
+                        <thead>
+                            <tr>
+                                <th>Full name</th>
+                                <th>Card Number</th>
+                                <th>Expiry Date</th>
+                                <th>CVV</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+
+                        </tbody>
+                        <tfoot>
+                            <form>
+                            <div id="submit-area" >
+     
+                            </div>
+                            </form>
+                            
+                        </tfoot>
+                    </table>
+                    
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+   <script src="js/all.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+         $(document).ready(function (){
+        $('form'). submit(function (ev){
+           $('.input_field').each(function (){
+              if($(this).val() == ''){
+                 $(this).css({'border':'1px solid red'});
+                 ev.preventDefault();
+              }else{
+                $(this).css({'border':'1px solid #eee'});
+                $(document).ready(function() {
+    $('form').submit(function(ev) {
+        ev.preventDefault();
+
+        var elements = $('.input_field');
+        var table = $('#my-table');
+        var row = table.find('tbody').eq(0).append('<tr></tr>');
+
+        var cell1 = $('<td></td>').html(`<input type="text" style="border:none; text-align: center;" value="${elements.eq(0).val()}">`);
+        var cell2 = $('<td></td>').html(`<input type="number" style="border:none; text-align: center;" value="${elements.eq(1).val()}">`);
+        var cell3 = $('<td></td>').html(`<input type="text" style="border:none; text-align: center;" value="${elements.eq(2).val()}">`);
+        var cell4 = $('<td></td>').html(`<input type="number" style="border:none; text-align: center;" value="${elements.eq(3).val()}">`);
+
+        row.append(cell1, cell2, cell3, cell4);
+
+        elements.val('');
+    });
+});
+              }
+           });
+        });
+     });
+     
+    </script>
+</body>
+</html>

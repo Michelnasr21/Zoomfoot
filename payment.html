@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pay method</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        :root{
+           --bas0:#fac031;
+        }
+        body{
+            background: #0f0c29;
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            height: 100vh;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+        }
+        nav{
+            z-index: 99;
+        }
+        .navbar-brand{
+             color:var(--bas0);
+
+        }
+        .navbar-brand:hover{
+           color:var(--bas0);
+        }
+        .nav-link{
+            color: #fff;
+        }
+        .nav-link:hover{
+            color: #fff;
+        }
+        .ico a{
+            color: #fff;
+        }
+        .ico a:hover{
+            color: var(--bas0);
+        }
+        .sea{
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+        .sea::placeholder{
+            color: #fff;
+        }
+        .sea:focus{
+            background-color: transparent;
+            border-radius: 20px;
+            border:1px solid #fff;
+        }
+        .navbar-toggler{
+            color: var(--bas0);
+            background-color: #fff;
+        }
+        .form {
+  display: flex;
+  /* under no in fornt of */
+  flex-direction: column; 
+  gap: 20px;
+  padding: 20px;
+  margin-top:70px;
+}
+.paymentother {
+  display: grid;
+  grid-template-columns: 50%;
+  gap: 20px;
+  padding: 10px;
+  justify-content: center;
+}
+.paymentother button {
+  height: 55px;
+  background: #F2F2F2;
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+.paymentother button svg {
+  height: 18px;
+}
+.paymentother button:last-child svg {
+  height: 22px;
+}
+.card-info{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.input_container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.split {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 15px;
+}
+.split input {
+  width: 100%;
+}
+.input_label {
+  font-size: 12px;
+  color: #8B8E98;
+  font-weight: 600;
+}
+.input_field {
+  width: auto;
+  height: 40px;
+  padding: 0 0 0 16px;
+  border-radius: 9px;
+  outline: none;
+  background-color: #F2F2F2;
+  border: 1px solid #e5e5e500;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+.checkout {
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  border: none;
+  background: #302b63;
+  color: ghostwhite;
+  overflow: hidden;
+}
+.checkout span {
+  position: relative;
+  transition: color 0.6s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+.checkout::before,
+.checkout::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.checkout::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transition: transform 0.5s cubic-bezier(0.3, 1, 0.8, 1);
+}
+.checkout:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+.checkout:active {
+  transform: scale(0.95);
+}
+.mo{
+    background: #FFFFFF;
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  max-width: 450px;
+
+}
+.my{
+  width: 250px;
+  height: 40px;
+  padding: 0 0 0 16px;
+  border-radius: 9px;
+  outline: none;
+  background-color: #F2F2F2;
+  border: 1px solid #e5e5e500;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+
+}
+.my-input{
+  width: 110px;
+  height: 40px;
+  padding: 0 0 0 16px;
+  border-radius: 9px;
+  outline: none;
+  background-color: #F2F2F2;
+  border: 1px solid #e5e5e500;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+
+}
+table{
+    border-radius: 5px;
+    font-size: 12px;
+    border:none;
+    background: #FFFFFF;
+    width: 100%;
+    border:1px solid #e5e5e500;
+    margin-top:70px;
+}
+td,th{
+    text-align: center;
+    padding: 8px;
+
+}
+#submit-area{
+  position: absolute;
+  transform: translate(420%,500%);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  border: none;
+  background: #302b63;
+  color: white;
+  overflow: hidden;
+
+}
+
+
+       
+    </style>
+</head>
+<body>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-transparent">
+        <div class="container-fluid">
+          <a class="navbar-brand ps-3" href="#">Zoom foot</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-3">
+              <li class="nav-item ">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Contact Us</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-3 sea" type="search" placeholder="Search..." aria-label="Search">
+              <div class="ico pe-2">
+                <a href="login.html"><i class="fa-solid fa-user"></i></a>
+              </div>
+              <div class="ico pe-3">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="mo">
+                        <form class="form">
+                            <div class="card-info">
+                                <div class="input_container">
+                                    <label class="input_label">Card holder name</label>
+                                    <input class="input_field"  type="text" placeholder="Enter your full name">
+                                </div>
+                                <div class="input_container">
+                                    <label class="input_label">Card Number</label>
+                                    <input class="input_field"  type="number" placeholder="0000 0000 0000 0000">
+                                </div>
+                                <div class="input_container">
+                                    <label class="input_label">Expiry Date / CVV</label>
+                                    <div class="split">
+                                        <input class="input_field my"  type="text" placeholder="01/23">
+                                        <input class="input_field my-input"   type="number" placeholder="CVV">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="error-message" style="display: none; color: red;"></div>
+                            <button type="button" class="checkout" style="cursor: pointer;" onclick="myFunction()">
+                                <span>Checkout</span>
+                            </button>
+                        </form>
+                    </div>
+                
+    
+                </div>
+                </div>
+                </div>
+               
+    <script src="js/jquery.js"></script>
+   <script src="js/all.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

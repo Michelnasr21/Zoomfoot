@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loader{
+    position: fixed;
+    top:0;
+     left:0;
+    z-index: 1000;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width:100%;
+  }
+  
+.loader.fade-out{
+    top:-120%;
+  }
+    </style>
+
+</head>
+<body>
+    <div class="loader">
+        <img src="images/loader.gif" alt="">
+    </div>
+    <div class="content">
+        <p>lomkfnjefurehu</p>
+    </div>
+    <script src="js/jquery.js"></script>
+
+    <script>
+        $(function (){
+         $('.content').hide();
+         $('.loader').delay(3000).fadeOut(500,function (){
+              $('.content').fadeIn(1000);
+         });
+        
+      });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .loader-container{
+    position: fixed;
+    top:0;
+     left:0;
+    z-index: 100000;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width:100%;
+  }
+  
+.loader-container.fade-out{
+    top:-120%;
+  }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <img src="images/loader.gif" alt="">
+      </div>
+
+      <script src="js/jquery.js"></script>
+   <script src="js/all.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script>
+    $(document).ready(function() {
+    function loader() {
+      $('.loader-container').addClass('fade-out');
+    }
+  
+    function fadeOut() {
+      setInterval(loader, 3000);
+    }
+  
+    
+  });
+   </script>
+    
+</body>
+</html>
